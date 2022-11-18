@@ -1,0 +1,25 @@
+FIRST:
+    Read the second answer given here:
+                  https://stackoverflow.com/questions/18317789/does-dapper-support-net-dataset
+                  
+    Then Read a little in here (Added ExecuteReader Method):
+                  https://github.com/DapperLib/Dapper/pull/103/commits/e53d85a0e2c872407f794777da2b395235e6aee3
+                  
+SECOND:
+    For more info read these links:
+    
+                  Retrienving Data Using a DataReader  =>  https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader
+                  
+                  SqlDataReader  =>  https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldatareader?view=dotnet-plat-ext-6.0
+                  
+       
+       
+       
+       
+       
+                  (
+                  Blah Blah Blah  =>  https://code.google.com/archive/p/dapper-dot-net/issues/156
+                  
+                  Dapper Plus and DataTables  (?!)  =>  https://dapper-plus.net/data-table    (what's dapper plus)
+                  )
+                  
