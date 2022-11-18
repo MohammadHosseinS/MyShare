@@ -1,0 +1,12 @@
+Why .adddynamicparameters(...); doesn't work with  string?
+
+https://blogs.msmvps.com/jcoehoorn/blog/2014/05/12/can-we-stop-using-addwithvalue-already/  
+    A part of the above article:
+    
+For example, say you have a varchar database column, but send a string parameter using the AddWithValue() function.
+ADO.Net will send this to the database as an nvarchar value.
+The database is not permitted to implicitly convert your nvarchar parameter to a varchar value to match the column type for the query.
+That would be a narrowing conversion that has the potential to lose information from the original value (because you might have non-Latin characters in the parameter),
+    and if that happened the database might produce the wrong query results.
+Instead, the database will likely need to convert the varchar column to nvarchar for this query (which is a widening conversion that is guaranteed not to lose information). The problem is that it will need to do this for every row in your table.
+    
