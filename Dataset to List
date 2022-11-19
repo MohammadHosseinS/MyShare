@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/17107220/convert-dataset-to-list
+
+var empList = ds.Tables[0].AsEnumerable()
+    .Select(dataRow => new Employee
+    {
+        Name = dataRow.Field<string>("Name")
+    }).ToList();
