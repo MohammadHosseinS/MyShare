@@ -1,0 +1,16 @@
+//  در پائین کاری که می خوایم بکنیم اینه که ببینیم آیا موردی در لیست آدم ها هست که آدرس خونه اش با موردی از لیست آدرس ها برابر باشه یا نه
+// و در صورتی که هست، اون آدرس رو از لیست حذف کنیم
+
+List<Person> people = new List<Person>();
+List<string> addresses = new List<string>();
+... // Fill "people" and "addresses"
+
+foreach (var item in people)
+{
+    if (addresses.Contains(item.Address) == true)
+    {
+        addresses.Remove(item.Address);
+    }
+}
+
+
