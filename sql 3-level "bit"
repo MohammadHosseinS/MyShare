@@ -1,0 +1,3 @@
+select case ISNULL(CAST(Srudents.Confirm AS INT),-1) WHEN -1 THEN 'در دست بررسی' WHEN 0 THEN 'رد' ELSE 'تایید' END AS Confirm from Students
+
+this way you can work with 3-level "bit" value in your table, and return data to c#
