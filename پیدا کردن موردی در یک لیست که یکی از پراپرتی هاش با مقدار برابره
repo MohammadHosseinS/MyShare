@@ -14,3 +14,7 @@ foreach (var item in people)
 }
 
 
+
+همچنین این راه در اس کیو ال قابل استفاده است
+https://stackoverflow.com/questions/11937206/sql-query-multiple-columns-using-distinct-on-one-column-only
+* => جواب دوم شاید بهتر هم باشه
