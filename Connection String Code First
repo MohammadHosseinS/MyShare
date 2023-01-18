@@ -1,0 +1,16 @@
+<connectionStrings>
+		<add name="cns"
+			 connectionString="Data Source=.;Initial Catalog=FinalProject;Integrated Security=True" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+	
+// Don't forget to add EntityFramework to your project
+
+
+// Also, the context (DB) Class should look like this:
+
+public class DB : DbContext
+    {
+        public DB() : base("cns") { }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Motavakel> Motavakels { get; set; }
+    }
