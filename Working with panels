@@ -1,0 +1,53 @@
+// می تونی یوزر کنترل بسازی، و اون رو به لیست کنترل های یک پنل در فرمت اضافه کنی. بعد هرکدوم رو خواستی نشون می دی و هرکدوم رو خواستی هاید می کنی
+
+private void MainForm_Load(object sender, EventArgs e)
+        {
+            ProductList pdl = new ProductList();
+            CustomerList cml = new CustomerList();
+            AboutUs abu = new AboutUs();
+            panel3.Controls.Add(pdl);
+            panel3.Controls.Add(cml);
+            panel3.Controls.Add(abu);
+            foreach (var item in panel3.Controls)
+            {
+                ((Control)item).Hide();
+            }
+        }
+        
+// اینطوری سه تا کنترل به پنل3 اضافه کردم، و همه رو هاید کردم
+// می تونی هم به جای شو و هاید کردن از اد و دیسپوز استفاده کنی، ولی من شو و هاید رو ترجیح می دم (یک دلیلش اینکه ایندکسِ هر کنترل رو می دونی)
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //foreach (var item in panel3.Controls)
+            //{
+            //    item.Visible = false;
+            //    panel3.BackColor = Color.FromArgb(253, 255, 252);
+            //}
+            //چرا این روش بالائی جواب نمی ده؟؟؟
+
+            if (panel3.Controls[1].Visible == true)
+            {
+                panel3.Controls[1].Visible = false;
+                panel3.BackColor = Color.FromArgb(253, 255, 252);
+            }
+            else if (panel3.Controls[2].Visible == true)
+            {
+                panel3.Controls[2].Visible = false;
+                panel3.BackColor = Color.FromArgb(253, 255, 252);
+            }
+            
+                panel3.Controls[0].Show();
+                panel3.BackColor = Color.FromArgb(46, 196, 182);
+            
+            /*if (panel3.Controls.Count > 0)
+            {
+                panel3.Controls[0].Dispose();
+                panel3.BackColor = Color.FromArgb(253, 255, 252);
+            }
+            ProductList productList = new ProductList();
+            panel3.Controls.Add(productList);
+            panel3.BackColor = Color.FromArgb(46, 196, 182);*/
+
+            
+        }
