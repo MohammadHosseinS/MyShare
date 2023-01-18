@@ -1,0 +1,3 @@
+// "products" is the name of a "List" inside the MainForm
+
+((MainForm)Application.OpenForms["MainForm"]).products.Add(product1);
