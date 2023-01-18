@@ -1,0 +1,29 @@
+// filling a dataset/datatable with sqlCommand
+
+string cmdtext = "SELECT dbo.Users.UserName AS [کاربر مربوطه], dbo.Invoices.InvoiceNumber AS [شماره فاکتور], dbo.Invoices.CheckedOut AS [بسته شده], dbo.Invoices.CheckOutDate AS [تاریخ بسته شدن] FROM dbo.Invoices LEFT OUTER JOIN dbo.Users ON dbo.Invoices.User_id = dbo.Users.id WHERE (dbo.Invoices.DeleteStatus = 0)";
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=FinalProject;Integrated Security=True");
+                var sqladapter = new SqlDataAdapter(cmdtext, con);
+                var commandbuilder = new SqlCommandBuilder(sqladapter);
+                var ds = new DataSet();
+                sqladapter.Fill(ds);
+                return ds.Tables[0];
+                
+                
+                
+// with parameters"
+
+public DataTable Read(string search, int index)
+        {            
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "dbo.SearchReminderUsersName";
+                cmd.Parameters.AddWithValue("@search", search);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=FinalProject;Integrated Security=True");
+                cmd.Connection = con;
+                var sqladapter = new SqlDataAdapter();
+                sqladapter.SelectCommand = cmd;
+                var commandbuilder = new SqlCommandBuilder(sqladapter);
+                var ds = new DataSet();
+                sqladapter.Fill(ds);
+                return ds.Tables[0];           
+        }
